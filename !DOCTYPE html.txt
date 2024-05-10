@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chillflix</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black; /* Change background to black */
+            color: #fff;
+        }
+
+        .background-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensure circular motions stay within the viewport */
+        }
+
+        .content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: peachpuff; /* Change to peach color */
+        }
+
+        .chillflix-heading {
+            font-size: 6em;
+            color: red; /* Change to red color */
+            position: absolute;
+            top: 80px; /* Adjusted positioning */
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid transparent;
+            border-radius: 50%;
+            padding: 10px 20px;
+            animation: borderAnimation 2s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes borderAnimation {
+            0% {
+                border-color: transparent red transparent transparent;
+            }
+            25% {
+                border-color: transparent transparent red transparent;
+            }
+            50% {
+                border-color: transparent transparent transparent red;
+            }
+            75% {
+                border-color: red transparent transparent transparent;
+            }
+            100% {
+                border-color: transparent red transparent transparent;
+            }
+        }
+
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: circleAnimation 4s infinite linear;
+        }
+
+        @keyframes circleAnimation {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .circle.left {
+            left: 10%;
+        }
+
+        .circle.right {
+            right: 10%;
+        }
+
+        .bubble {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            animation: floatBubble 5s infinite linear;
+        }
+
+        @keyframes floatBubble {
+            0% {
+                transform: translateY(100vh);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .bubble:nth-child(2) {
+            left: 15%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 7s;
+        }
+
+        .bubble:nth-child(3) {
+            left: 25%;
+            width: 30px;
+            height: 30px;
+            animation-duration: 6s;
+        }
+
+        .bubble:nth-child(4) {
+            left: 35%;
+            width: 25px;
+            height: 25px;
+            animation-duration: 5s;
+        }
+
+        .bubble:nth-child(5) {
+            left: 45%;
+            width: 28px;
+            height: 28px;
+            animation-duration: 4s;
+        }
+
+        .bubble:nth-child(6) {
+            left: 55%;
+            width: 22px;
+            height: 22px;
+            animation-duration: 6s;
+        }
+
+        .bubble:nth-child(7) {
+            left: 65%;
+            width: 26px;
+            height: 26px;
+            animation-duration: 5s;
+        }
+
+        .bubble:nth-child(8) {
+            left: 75%;
+            width: 29px;
+            height: 29px;
+            animation-duration: 7s;
+        }
+
+        .bubble:nth-child(9) {
+            left: 85%;
+            width: 23px;
+            height: 23px;
+            animation-duration: 6s;
+        }
+
+        .bubble:nth-child(10) {
+            left: 95%;
+            width: 27px;
+            height: 27px;
+            animation-duration: 5s;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ff1e2d;
+        }
+
+        .contact-details {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .signup-btn {
+            background-color: #007bff;
+            color: white;
+            margin-left: 20px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-overlay">
+        <div class="content">
+            <h1>Welcome to Chillflix!</h1> <!-- Added exclamation mark -->
+            <div class="chillflix-heading">Chillflix</div>
+            <p>Get ready to chill and binge-watch your favorite shows and movies.</p>
+            <div>
+                <a href="#" class="btn">Sign In with Username</a>
+                <a href="#" class="btn">Sign In with Email &#x1F4E7;</a> <!-- Added email emoji -->
+                <a href="#" class="btn signup-btn">Not signed in yet!</a> <!-- Updated text -->
+            </div>
+            <p class="contact-details">Contact: 8485066325</p>
+            <div class="circle left"></div>
+            <div class="circle right"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <span>Created By Chillflix</span>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
